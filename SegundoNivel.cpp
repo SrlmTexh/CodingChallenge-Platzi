@@ -75,16 +75,42 @@ class Reto4
 		}
 	private:
 		string Animal;
-		string Turtles = "TURTLE";
 		//transform(Animal.begin(), Animal.end(), Animal.begin(), toupper);
 		void turtles()
 		{
-			if (Animal == Turtles)
+			if (Animal == "TURTLE")
 				cout<<"I like Turtles too!! \n";
 			else
-				cout<<"Thats a Interesting Animal but I prefer Turtles UwU \n";	
+				cout<<"Thats a Interesting Animal, but I prefer Turtles UwU \n";	
 		}
 
+};
+class Reto5
+{
+	public:
+		char setWeather(char sWeather){Weather = sWeather;}
+		void getWeatherOptions()
+		{
+			return weatherOptions();
+		}
+	private:
+		char Weather,Wind;
+		void weatherOptions()
+		{
+			if(toupper(Weather) == 'Y')
+			{
+				cout<<"there is strong wind? ";
+				cin>>Wind;
+				if(toupper(Wind) == 'Y')
+					cout<<"Too much wind to go out with Umbrella \n";
+				else
+					cout<<"Take an umbrella before go out  ^w^ \n";
+			}				
+			else
+				cout<<"Ok, Have a Nice day UWU \n";	
+		}	
+	protected:
+		
 };
 void Menu()
 {
@@ -103,6 +129,7 @@ int optChallenge_Processor(int opt)
 	Reto2 optRtTwo;
 	Reto3 optRtThree;
 	Reto4 optRtFour;
+	Reto5 optRtFive;
 	cout<<"\n ****************************************\n "<<endl;
 	switch(opt)
 	{
@@ -140,15 +167,20 @@ int optChallenge_Processor(int opt)
 			optRtThree.getResultrt3();
 			break;
 		case 4:
-			string animal;
+			/*string animal;
 			cout<<"Insert your Favorite Animal: ";
 			cin>>animal;
 			optRtFour.setAnimal(animal);
-			optRtFour.getAnimalPreference();
+			optRtFour.getAnimalPreference();*/
 			break;
-	/*	case 5:
+		case 5:
+			char clResp;
+			cout<<"Its ranning? : ";
+			cin>>clResp;
+			optRtFive.setWeather(clResp);
+			optRtFive.getWeatherOptions();
 			break;
-		case 6:
+	/*	case 6:
 			break;
 		case 7:
 			break;
