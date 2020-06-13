@@ -130,6 +130,48 @@ class Reto6
 				cout<<"Do you know where to steer your future?, Im sure I can help you.. ^w^ \n";	
 		}	
 };
+class Reto7
+{
+	public:
+		int setOpt(int sOpt){Opt = sOpt;}
+		void getPaths()
+		{
+			return truePath();
+		}
+	private:
+		int Opt;
+		void learningPaths()
+		{
+			switch(Opt)
+			{
+				case 1: cout<<"Today we will learn about programming \n";
+					break;
+				case 2: cout<<"What about we take a Digital Marketing course? \n";
+					break;
+				case 3: cout<<"Today is a Big Day to start learning Desing \n";
+					break;
+				case 4: cout<<"What About learn Online Bussines \n";
+					break;
+				case 5: cout<<"lets see a pair of videos about Audiovisual Production \n";
+					break;
+				case 6: cout<<"Maybe we need to  train own SoftSkills \n";
+					break;	
+			}	
+		}
+	protected:
+		bool optRight = true;
+		void truePath()
+		{
+			while( optRight == true)
+			{
+				if(Opt < 1 || Opt > 6)	
+					cout<<"Choose other option,please.\n";
+				else
+					optRight = false;
+					return learningPaths();
+			}
+		}	
+};
 void Menu()
 {
 	cout<<"Reto #1 - Numero mayor y menor "<<endl;
@@ -149,6 +191,7 @@ int optChallenge_Processor(int opt)
 	Reto4 optRtFour;
 	Reto5 optRtFive;
 	Reto6 optRtSix;
+	Reto7 optRtSeven;
 	cout<<"\n ****************************************\n"<<endl;
 	switch(opt)
 	{
@@ -206,11 +249,16 @@ int optChallenge_Processor(int opt)
 			optRtSix.setYears(ageCst);
 			optRtSix.getLearnAnswear();
 			break;
-	/*	case 7:
+		case 7:
+			int pathOpt;
+			cout<<"Insert a Number Between 1 to 6, please";
+			cin>>pathOpt;
+			optRtSeven.setOpt(pathOpt);
+			optRtSeven.getPaths();
 			break;
 		default:
 			cout<<"Invalide Option, Try other...";
-			break;*/
+			break;
 	}
 }
 
