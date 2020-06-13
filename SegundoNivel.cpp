@@ -164,11 +164,16 @@ class Reto7
 		{
 			while( optRight == true)
 			{
-				if(Opt < 1 || Opt > 6)	
-					cout<<"Choose other option,please.\n";
+				if(Opt < 1 || Opt > 6)
+				{
+					cout<<"Choose other option,please: ";
+					cin>>Opt;
+				}	
 				else
+				{
 					optRight = false;
-					return learningPaths();
+					return learningPaths();	
+				}
 			}
 		}	
 };
@@ -251,7 +256,7 @@ int optChallenge_Processor(int opt)
 			break;
 		case 7:
 			int pathOpt;
-			cout<<"Insert a Number Between 1 to 6, please";
+			cout<<"Insert a Number Between 1 to 6, please: ";
 			cin>>pathOpt;
 			optRtSeven.setOpt(pathOpt);
 			optRtSeven.getPaths();
