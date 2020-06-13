@@ -108,9 +108,27 @@ class Reto5
 			}				
 			else
 				cout<<"Ok, Have a Nice day UWU \n";	
+		}		
+};
+class Reto6
+{
+	public:
+		int setYears(int sAge){ years = sAge;}
+		void getLearnAnswear()
+		{
+			return allwaysLearn();
+		}
+	private:
+		int years;
+		void allwaysLearn()
+		{
+			if( years >= 30)
+				cout<<"Is not too late to learn, What course we will take? \n";
+			else if(years >=18 && years <=29)
+				cout<<"Is good Time to improve your career \n";
+			else
+				cout<<"Do you know where to steer your future?, Im sure I can help you.. ^w^ \n";	
 		}	
-	protected:
-		
 };
 void Menu()
 {
@@ -121,7 +139,7 @@ void Menu()
 	cout<<"Reto #5 - ¿Como esta el clima?"<<endl;
 	cout<<"Reto #6 - Edad permitida"<<endl;
 	cout<<"Reto #7 - Mensajes opcionales"<<endl;
-	cout<<"\n ****************************************\n "<<endl;
+	cout<<"\n ****************************************\n"<<endl;
 };
 int optChallenge_Processor(int opt)
 {
@@ -130,7 +148,8 @@ int optChallenge_Processor(int opt)
 	Reto3 optRtThree;
 	Reto4 optRtFour;
 	Reto5 optRtFive;
-	cout<<"\n ****************************************\n "<<endl;
+	Reto6 optRtSix;
+	cout<<"\n ****************************************\n"<<endl;
 	switch(opt)
 	{
 		case 1:
@@ -180,9 +199,14 @@ int optChallenge_Processor(int opt)
 			optRtFive.setWeather(clResp);
 			optRtFive.getWeatherOptions();
 			break;
-	/*	case 6:
+		case 6:
+			int ageCst;
+			cout<<"Insert your Age please: ";
+			cin>>ageCst;
+			optRtSix.setYears(ageCst);
+			optRtSix.getLearnAnswear();
 			break;
-		case 7:
+	/*	case 7:
 			break;
 		default:
 			cout<<"Invalide Option, Try other...";
