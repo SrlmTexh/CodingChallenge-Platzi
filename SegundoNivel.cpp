@@ -1,4 +1,5 @@
 #include<iostream>
+
 using namespace std;
 
 class Reto1
@@ -64,6 +65,27 @@ class Reto3 : public Reto1
 				cout<<"All the numbers are equal... \n Interesting ... \n";
 		}		
 };
+class Reto4
+{
+	public:
+		string setAnimal(string animalName){ Animal = animalName;}
+		void getAnimalPreference()
+		{
+			return turtles();
+		}
+	private:
+		string Animal;
+		string Turtles = "TURTLE";
+		//transform(Animal.begin(), Animal.end(), Animal.begin(), toupper);
+		void turtles()
+		{
+			if (Animal == Turtles)
+				cout<<"I like Turtles too!! \n";
+			else
+				cout<<"Thats a Interesting Animal but I prefer Turtles UwU \n";	
+		}
+
+};
 void Menu()
 {
 	cout<<"Reto #1 - Numero mayor y menor "<<endl;
@@ -80,6 +102,7 @@ int optChallenge_Processor(int opt)
 	Reto1 optRtOne;
 	Reto2 optRtTwo;
 	Reto3 optRtThree;
+	Reto4 optRtFour;
 	cout<<"\n ****************************************\n "<<endl;
 	switch(opt)
 	{
@@ -116,17 +139,22 @@ int optChallenge_Processor(int opt)
 			optRtThree.setRt1NumberThree(rt3NumberThree);
 			optRtThree.getResultrt3();
 			break;
-	/*	case 4:
+		case 4:
+			string animal;
+			cout<<"Insert your Favorite Animal: ";
+			cin>>animal;
+			optRtFour.setAnimal(animal);
+			optRtFour.getAnimalPreference();
 			break;
-		case 5:
+	/*	case 5:
 			break;
 		case 6:
 			break;
 		case 7:
-			break;*/
+			break;
 		default:
 			cout<<"Invalide Option, Try other...";
-			break;
+			break;*/
 	}
 }
 
