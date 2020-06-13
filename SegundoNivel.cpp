@@ -12,7 +12,6 @@ class Reto1
 			return BiggerLess();
 		}
 	private:
-		float rt1TempNum;
 		void BiggerLess()
 		{
 			if(Reto1NumberOne > Reto1NumberTwo)
@@ -29,6 +28,24 @@ class Reto1
 			}		
 		}	
 };
+class Reto2 : public Reto1
+{
+	public:
+	//	float setRt1NumberOne(float sReto1NumberOne){Reto1NumberOne = sReto1NumberOne;}
+	//	float setRt1NumberTwo(float sReto1NumberTwo){Reto1NumberTwo = sReto1NumberTwo;}
+		void getResultrt2()
+		{
+			return inRangePlease();
+		}
+	private:	
+		void inRangePlease()
+		{
+			if(Reto1NumberTwo < Reto1NumberOne )
+				cout<<"The Number: "<<Reto1NumberTwo<<" is on Range, Thanks UwU \n";
+			else
+				cout<<"The Number: "<< Reto1NumberTwo <<" exceeds the range authorized! \n";
+		}
+};
 
 void Menu()
 {
@@ -44,6 +61,7 @@ void Menu()
 int optChallenge_Processor(int opt)
 {
 	Reto1 optRtOne;
+	Reto2 optRtTwo;
 	switch(opt)
 	{
 		case 1:
@@ -55,9 +73,17 @@ int optChallenge_Processor(int opt)
 			optRtOne.setRt1NumberTwo(rt1NumberTwo);
 			optRtOne.getResultrt1();
 			break;
-	/*	case 2:
+		case 2:
+			float  rt2NumberOne, rt2NumberTwo;
+			cout<<"Insert two Numbers: "<<endl;
+			cin>>rt2NumberOne;
+			optRtTwo.setRt1NumberOne(rt2NumberOne);
+			cin>>rt2NumberTwo;
+			optRtTwo.setRt1NumberTwo(rt2NumberTwo);
+			optRtTwo.getResultrt2();
+			
 			break;
-		case 3:
+	/*	case 3:
 			break;
 		case 4:
 			break;
