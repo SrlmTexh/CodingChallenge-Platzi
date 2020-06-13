@@ -31,8 +31,6 @@ class Reto1
 class Reto2 : public Reto1
 {
 	public:
-	//	float setRt1NumberOne(float sReto1NumberOne){Reto1NumberOne = sReto1NumberOne;}
-	//	float setRt1NumberTwo(float sReto1NumberTwo){Reto1NumberTwo = sReto1NumberTwo;}
 		void getResultrt2()
 		{
 			return inRangePlease();
@@ -46,7 +44,26 @@ class Reto2 : public Reto1
 				cout<<"The Number: "<< Reto1NumberTwo <<" exceeds the range authorized! \n";
 		}
 };
-
+class Reto3 : public Reto1
+{
+	public:
+		float Reto1NumberThree;
+		float setRt1NumberThree(int sReto1NumberThree){Reto1NumberThree = sReto1NumberThree;}
+		void getResultrt3()
+		{
+			return inRangeBL();
+		}
+	private:
+		void inRangeBL()
+		{
+			if (Reto1NumberTwo < Reto1NumberOne && Reto1NumberTwo > Reto1NumberThree)
+				cout<<"The Number is on the Range, Thanks, Good Job UwU \n";
+			else if(Reto1NumberTwo > Reto1NumberOne || Reto1NumberTwo < Reto1NumberThree)
+				cout<<"The Number is out of the Range, check your Numbers please. \n";
+			else
+				cout<<"All the numbers are equal... \n Interesting ... \n";
+		}		
+};
 void Menu()
 {
 	cout<<"Reto #1 - Numero mayor y menor "<<endl;
@@ -62,6 +79,8 @@ int optChallenge_Processor(int opt)
 {
 	Reto1 optRtOne;
 	Reto2 optRtTwo;
+	Reto3 optRtThree;
+	cout<<"\n ****************************************\n "<<endl;
 	switch(opt)
 	{
 		case 1:
@@ -75,17 +94,29 @@ int optChallenge_Processor(int opt)
 			break;
 		case 2:
 			float  rt2NumberOne, rt2NumberTwo;
-			cout<<"Insert two Numbers: "<<endl;
+			cout<<"Insert a limite Number: ";
 			cin>>rt2NumberOne;
 			optRtTwo.setRt1NumberOne(rt2NumberOne);
+			cout<<"Insert a Number: ";
 			cin>>rt2NumberTwo;
 			optRtTwo.setRt1NumberTwo(rt2NumberTwo);
 			optRtTwo.getResultrt2();
 			
 			break;
-	/*	case 3:
+		case 3:
+			float  rt3NumberOne, rt3NumberTwo,rt3NumberThree;
+			cout<<"Insert a MaxNumber Range: ";
+			cin>>rt3NumberOne;
+			optRtThree.setRt1NumberOne(rt3NumberOne);
+			cout<<"Insert any Number: ";
+			cin>>rt3NumberTwo;
+			optRtThree.setRt1NumberTwo(rt3NumberTwo);
+			cout<<"Insert a MinNumber Range: ";
+			cin>>rt3NumberThree;
+			optRtThree.setRt1NumberThree(rt3NumberThree);
+			optRtThree.getResultrt3();
 			break;
-		case 4:
+	/*	case 4:
 			break;
 		case 5:
 			break;
